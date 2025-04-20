@@ -104,4 +104,4 @@ validate $? "Schema loading"
 systemctl restart backend &>>$logfile
 validate $? "restarting the backend"
 
-echo -e "$R ***** $G Script Execution is completed $R*****$N"
+echo -e "$G *****_____Script Execution is completed_____*****$N"
