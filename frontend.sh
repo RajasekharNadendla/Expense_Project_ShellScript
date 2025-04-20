@@ -1,6 +1,6 @@
 #!/bin/bash
 USERID=$(id -u)
-TimeStamp=$(date %F-%H-%M-%S)
+TimeStamp=$(date +%F-%H-%M-%S)
 ScriptName=$(echo $0 | cut -d "." -f1)
 logfile=/tmp/$ScriptName-$TimeStamp.log
 R="\e[31m"
