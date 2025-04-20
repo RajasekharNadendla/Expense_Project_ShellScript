@@ -21,7 +21,7 @@ validate(){
     fi
 }
 
-if [$USERID -ne 0]
+if [ $USERID -ne 0 ]
 then 
     echo "please run the script with the root access"
     exit 1
@@ -36,7 +36,7 @@ dnf module enable nodejs:20 -y &>>$logfile
 validate $? "Enabling nodejs:20 version"
 
 dnf list installed nodejs &>>$logfile
-if [$? -ne 0]
+if [ $? -ne 0 ]
 then
     dnf install nodejs -y &>>$logfile
     validate $? "Installing nodejs"
@@ -45,7 +45,7 @@ else
 fi
 
 id expense &>>$logfile
-if [$? -ne 0]
+if [ $? -ne 0 ]
 then
     useradd expense &>>$logfile
     validate $? "creating the expense user"
@@ -90,7 +90,7 @@ systemctl enable backend &>>$logfile
 validate $? "Enabling backend"
 
 dnf list installed mysql &>>$logfile
-if [$? -ne 0]
+if [ $? -ne 0 ]
 then 
     dnf install mysql -y &>>$logfile
     validate $? "installing mysql client"

@@ -21,7 +21,7 @@ validate(){
     fi
 }
 
-if [$USERID -ne 0]
+if [ $USERID -ne 0 ]
 then 
     echo "please run the script with the root access"
     exit 1
@@ -31,7 +31,7 @@ fi
 
 
 dnf list installed nginx &>>$logfile
-if [$? -ne 0]
+if [ $? -ne 0 ]
 then 
     dnf install nginx -y &>>$logfile
     validate $? "Installing nginx"

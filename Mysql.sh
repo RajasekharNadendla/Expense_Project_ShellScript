@@ -20,7 +20,7 @@ validate(){
     fi
 }
 
-if [$USERID -ne 0]
+if [ $USERID -ne 0 ]
 then
     echo "please run the script with the root access"
     exit 1
@@ -42,7 +42,7 @@ validate $? "Start mysql server"
 
 
 mysql -h db.rajasekhar.store -uroot -p${Root_Password} -e 'show databases;' &>>$logfile
-if [$? -ne 0]
+if [ $? -ne 0 ]
 then
     mysql_secure_installation --set-root-pass ${Root_Password} &>>$logfile
     validate $? "Setting the root password for mysql"
