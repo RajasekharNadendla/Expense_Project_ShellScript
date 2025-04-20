@@ -29,9 +29,15 @@ else
 fi
 
 
+dnf list installed mysql &>>$logfile
+if [ $? -ne 0 ]
+then
+    dnf install mysql-server -y &>>$logfile
+    validate $? "installing mysql server"
+else
+    echo -e "mysql is already installed $Y skipping $N"
+fi
 
-dnf install mysql-server -y &>>$logfile
-validate $? "installing mysql server"
 
 
 systemctl enable mysqld &>>$logfile
