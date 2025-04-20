@@ -71,6 +71,9 @@ validate $? "change directory to app"
 unzip /tmp/backend.zip &>>$logfile
 validate $? "Extracted backend code"
 
+cd /app &>>$logfile
+validate $? "change directory to app"
+
 npm install &>>$logfile
 validate $? "install the dependencies of the backend"
 
