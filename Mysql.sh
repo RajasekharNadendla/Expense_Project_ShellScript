@@ -55,3 +55,5 @@ then
 else
     echo -e "root password is already Configured $Y skipping $N"
 fi
+
+echo -e "$R ***** $G Script Execution is completed $R*****$N"

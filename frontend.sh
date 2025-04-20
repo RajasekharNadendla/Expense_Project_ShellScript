@@ -67,4 +67,4 @@ validate $? "Copied expense conf"
 systemctl restart nginx &>>$logfile
 validate $? "Restarting nginx"
 
-echo -e "$G ***** Script Execution is completed *****$N"
+echo -e "$R ***** $G Script Execution is completed $R***** $N"
